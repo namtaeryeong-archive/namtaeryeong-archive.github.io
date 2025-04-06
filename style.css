@@ -1,0 +1,177 @@
+
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    #timeline-container {
+      background-color: #e9e9e9;
+      border-bottom: 1px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-controls {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .timeline-controls label {
+      margin-right: 10px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    #time-slider {
+      width: 100%;
+      cursor: pointer;
+      flex-grow: 1;
+    }
+
+    #current-time-display {
+      font-style: italic;
+      color: #555;
+      min-width: 120px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    #time-ticks {
+      position: relative;
+      width: 100%;
+      height: 20px;
+      margin-top: 2px;
+      padding: 2px;
+    }
+
+    #histogram-bars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .histobar {
+      position: absolute;
+      bottom: 0;
+      width: 2px;
+      background-color: rgba(0, 0, 255, 0.4);
+      transition: height 0.2s ease;
+    }
+
+    .tick {
+  position: absolute;
+  width: 1px;
+  height: 10px;
+  background-color: #333;
+  top: 0;
+}
+
+.tick::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  width: 12px;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+    .tick.tick-day {
+      height: 15px;
+      background-color: #d9534f;
+    }
+
+    .tick.tick-active {
+        height: 19px;
+        width: 24px;
+      position: absolute;
+        background-color: #bbb;
+        background: url(tractor.svg);
+        display: inline-block;
+    }
+
+    #tweet-list-container {
+      width: 100%;
+      padding: 10px 20px;
+      max-height: calc(100vh - 70px);
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    .tweet-container {
+      display: flex;
+
+      align-items: flex-start;
+      border: 2px solid #ccc;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+
+
+    .tweet-profile {
+      width: 50px;
+      height: 50px;
+      background-color: #aaa;
+      border-radius: 50%;
+      margin-right: 15px;
+      margin-top: 10%;
+      flex-shrink: 0;
+    }
+
+  .tweet-profile-retweet {
+        width: 50px;
+        height: 50px;
+        background-color: #aaa;
+        background: url(retweet.svg);
+        border-radius: 50%;
+        margin-right: 15px;
+        margin-top: 10%;
+        flex-shrink: 0;
+      }
+  /* why not working? why retweet.svg not loaded? */
+
+
+    .tweet-who-when {
+      flex:1;
+    }
+    .tweet-retweeted-by{
+      flex: 1;
+      font-size: .1em;
+
+    }
+
+    .tweet-content {
+      flex: 1;
+    }
+
+    .tweet-container a {
+      color: blue;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .tweet-container img {
+      width: 100%;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 5px;
+      display: block;
+    }
